@@ -1,0 +1,3 @@
+[submodule "nuketest"]
+	path = nuketest
+	url = https://github.com/MightyPowerNuke/nuketest.git
