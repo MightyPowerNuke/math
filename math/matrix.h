@@ -4,6 +4,7 @@
 #include "vector.h"
 #include "point.h"
 
+#include <array>
 #include <type_traits>
 
 namespace mpn {
@@ -33,11 +34,11 @@ namespace mpn {
 		{}
 
 
-		constexpr float operator()(int row, int column) const {
+		constexpr T operator()(int row, int column) const {
 			assert(row >= 0 && row < H && column >= 0 && column < W);
 			return m[row + H * column];
 		}
-		constexpr float& operator()(int row, int column) {
+		constexpr T& operator()(int row, int column) {
 			assert(row >= 0 && row < H && column >= 0 && column < W);
 			return m[row + H * column];
 		}
@@ -48,6 +49,10 @@ namespace mpn {
 				for (int col = 0; col < W; ++col)
 					result[row + H * col] = m[col + H * row];
 			return Matrix<H, W, T>(result);
+		}
+
+		const T* const data() const {
+			return m;
 		}
 
 	private:
