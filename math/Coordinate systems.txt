@@ -1,0 +1,41 @@
+====CARTESIAN COORDINATE SYSTEM====
+
+P = (x, y, [z])
+
+y
++ 
+|   + [z]
+|  /
+| /
+|/
+-------+ x
+
+This is the standard OpenGL coordinate system where camera looks
+in the -z direction from the origo.
+In 2D the z axis is missing but everything else is the same.
+
+====SPHERICAL COORDINATE SYSTEM====
+
+P = (r, theta, phi)
+
+r: the distance from the origo
+theta: elevation (the angle of the PO vector to the XZ plane)
+phi: horizontal direction (angle of PO vector to the XY plane)
+
+-PI/2 <= theta <= +PI/2
+    0 <=  phi  <  PI*2
+
+This is an extension of the polar coordinate system into 3D
+by adding a Z axis with the inclination (theta) being restricted
+to +/- 90°.
+
+====POLAR COORDINATE SYSTEM====
+
+P = (r, theta)
+
+r: the distance from the origo
+theta: angle to the x axis
+
+
+
+See also: unit tests for transforms
