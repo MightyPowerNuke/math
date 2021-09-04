@@ -33,6 +33,8 @@ namespace mpn {
 		Point3 inverseTransform(const Point3& point) const;
 		geom::Line inverseTransformLine(const geom::Line& line) const;
 
+		const float* const getMatrixData() const { return T.data(); }
+
 	private:
 		friend Transform operator*(const Transform& lhs, const Transform& rhs);
 

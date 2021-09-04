@@ -161,6 +161,7 @@
     <ClInclude Include="random.h" />
     <ClInclude Include="spherical.h" />
     <ClInclude Include="transform.h" />
+    <ClInclude Include="use_math.h" />
     <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
