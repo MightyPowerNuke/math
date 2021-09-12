@@ -124,6 +124,10 @@ namespace mpn {
 
 	Matrix4 rotationMatrix(const geom::Line& axis, float phi)
 	{
+		if (axis.v.length() == 0.0f)
+		{
+			return identityMatrix;
+		}
 		const Vector3 normalizedAxisDirection = axis.v.asUnitVector();
 		const float u = normalizedAxisDirection[0];
 		const float v = normalizedAxisDirection[1];
