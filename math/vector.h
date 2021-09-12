@@ -66,6 +66,15 @@ namespace mpn
 			return result;
 		}
 
+		constexpr Vector<N, T>& operator+=(const Vector<N, T>& rhs)
+		{
+			for (int i = 0; i < N; ++i)
+			{
+				v[i] += rhs.v[i];
+			}
+			return *this;
+		}
+
 	private:
 		static constexpr size_t arraySize = N * sizeof(T);
 		T v[N];
