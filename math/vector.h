@@ -182,6 +182,24 @@ namespace mpn
 		return Vector<3, T>(lhs[1] * rhs[2] - lhs[2] * rhs[1], lhs[2] * rhs[0] - lhs[0] * rhs[2], lhs[0] * rhs[1] - lhs[1] * rhs[0]);
 	}
 
+	// Also known as Hadamard product
+	template<int N, typename T>
+	constexpr Vector<N, T> entrywiseProduct(const Vector<N, T>& lhs, const Vector<N, T>& rhs) {
+		T result[N];
+		for (int i = 0; i < N; ++i)
+			result[i] = lhs[i] * rhs[i];
+		return Vector<N, T>(result);
+	}
+	
+	// Also known as Hadamard division
+	template<int N, typename T>
+	constexpr Vector<N, T> entrywiseDivision(const Vector<N, T>& lhs, const Vector<N, T>& rhs) {
+		T result[N];
+		for (int i = 0; i < N; ++i)
+			result[i] = lhs[i] / rhs[i];
+		return Vector<N, T>(result);
+	}
+
 	template<int N, typename T>
 	std::ostream& operator<<(std::ostream& out, const Vector<N, T>& vector) {
 		out << '(';
