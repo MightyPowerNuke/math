@@ -45,6 +45,19 @@ namespace mpn
 		constexpr T operator[](int index) const { return p[index]; }
 		constexpr T& operator[](int index) { return p[index]; }
 
+		constexpr Point<N, T>& operator+=(const Vector<N, T>& rhs)
+		{
+			for (int i = 0; i < N; ++i)
+				p[i] += rhs[i];
+			return *this;
+		}
+		constexpr Point<N, T>& operator-=(const Vector<N, T>& rhs)
+		{
+			for (int i = 0; i < N; ++i)
+				p[i] -= rhs[i];
+			return *this;
+		}
+
 		Vector<N, T> asVector() const {
 			return Vector<N, T>(p);
 		}
