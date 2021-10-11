@@ -154,6 +154,15 @@ namespace mpn {
 		return Vector<3, T>(result);
 	}
 
+	template<int N, typename T>
+	constexpr T trace(const Matrix<N, N, T>& m)
+	{
+		T result{ 0 };
+		for (int i = 0; i < N; ++i)
+			result += m(i, i);
+		return result;
+	}
+
 	template<int W, int H, typename T>
 	void loadIdentity(Matrix<W,H,T>& matrix) {
 		for (int row = 0; row < H; ++row)
